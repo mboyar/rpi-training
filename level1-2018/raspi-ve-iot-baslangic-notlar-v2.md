@@ -132,38 +132,38 @@ Turta​ ® isimli Raspberry Pi için tasarlanmış I/O ve sensör genişletme k
 
 * **PIR Sensör**
 I2C bus dışında Raspberry Pi GPIO’larına doğrudan erişim de mümkün. Örneğin; GPIO20 ve GPIO12 pinlerinde LCA717 solid state rölelere,  GPIO25 pini ile AM312 hareket sensörüne gpio komutu ile erişebiliriz. Röle çıkışlarına herhangi bir şey bağlamadan durumunu kart üzerindeki ledleri ile görebilirsiniz. Turta HAT dokümanında geçen tüm pin nolar BCM numaralandırmasına göredir.
-![pir](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/turtaiothat_pir.png)
+![](./pics/turtaiothat_pir.png)
 Hareket sensörüne aşağıdaki gibi erişilebilir:
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/Selection_029.jpg)
+![](./pics/Selection_029.jpg)
 Röle ledleri aşağıda gibi toggle edilebilir:
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/Selection_030.jpg)
+![](./pics/Selection_030.jpg)
 
 * **Bosch Sensortec BME280 hava durumu sensörü**
 Turta HAT üzerindeki Bosch Sensortec BME280 hava durumu sensörü ile sıcaklık, basınç, nem ve rakım ölçümleri yapmak mümkün.
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/turtaiothat_hava.png)
+![](./pics/turtaiothat_hava.png)
 Linux kullanıcısının erişimi için Adafruit’den faydalanacağız.
 [github.com_Adafruit_Python_BME280](https://github.com/adafruit/Adafruit_Python_BME280)
 Yukarıdaki linkte ve aşağıdaki resimdeki şekilde kurulumu gerçekleştirelim.
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/Selection_023.jpg)
+![](./pics/Selection_023.jpg)
 Ardından örneği aşağıdaki gibi çalıştırdığımızda değerler karşımızda olacak
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/Selection_025.jpg)
+![](./pics/Selection_025.jpg)
 
 
 * **APDS-9960 Işık, RGB, gesture ve mesafe sensörü**
 Şimdi APDS-9960 Işık, RGB, gesture ve mesafe sensörüne erişelim.
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/turtaiothat_isik.png)
+![](./pics/turtaiothat_isik.png)
 [justinwoodman.wordpress.com__apds-9960](https://goo.gl/xKqUT6)
 Linkte okuduğumuz gibi :
 	* `$> git clone https://bitbucket.org/justin_woodman/apds-9960-raspberry-pi-library.git` komutu ile repoyu Raspberry Pi içine klonlayalım ve klasöre girelim ardından
 	* `$> g++ -Wall -o  ColorSensor  ColorSensor.cpp APDS9960_RPi.cpp -lwiringPi` ve
 	* `$> g++ -Wall -o  ProximitySensor  ProximitySensor.cpp APDS9960_RPi.cpp -lwiringPi` komutları ile örnek uygulamalarımızı derleyelim ve aşağıdaki resimlerdeki gibi çalıştıralım..
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/Selection_026.jpg)
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/Selection_027.jpg)
+![](./pics/Selection_026.jpg)
+![](./pics/Selection_027.jpg)
 
 * **i2c-tools**
 Turta HAT github sayfasında ve HAT kartın arka yüzeyinde gördüğümüz gibi BME280 I2C 0x77 adresi üzerinde ve APDS-9960 ise I2C 0x39 adresi üzerinden haberleşir. Cihazımıza bağlı tüm I2C aygıtları listelemenin bir yolu var şimdi buna değinelim: 
 `$> sudo apt install i2c-tools` komutu ile yardımcı uygulama paketini kuralım. Ardından aşağıdaki resimdeki gibi uygulamayı çalıştıralım
-![](/home/murat/prj-freelance/aktifler/makerhane/git/rpi-training/level1-2018/pics/Selection_028.jpg)
+![](./pics/Selection_028.jpg)
 Ayrıca 0x10 (VEML6075), 0x28 (TSOP38338 ve ADC) ve 0x57 (MAX30100)  sensörlerinin de bus’ta aktif olduğunu görüyoruz. ADC’ye i2c bus ile erişim için wiringPi kütüphanesi i2c fonksiyonlarını deneyebilirsiniz
 
 ---
